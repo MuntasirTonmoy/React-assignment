@@ -12,7 +12,11 @@ const Shows = () => {
   return (
     <div>
       {shows?.map((showList) => {
-        return <li key={showList.show.id}>{showList.show.name}</li>;
+        return (
+          <li key={showList.show.id} className="text-2xl">
+            {showList.show.name}
+          </li>
+        );
       })}
     </div>
   );
