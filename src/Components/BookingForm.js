@@ -55,6 +55,9 @@ const BookingForm = () => {
           className="max-w-lg mx-auto py-10 lg:px-0 px-5"
         >
           <div className="text-center bg-blue-50 rounded py-5 mb-3">
+            <p className="text-info border-b-2 pb-3 uppercase font-semibold">
+              Booking Info
+            </p>
             <p className="text-2xl font-bold mt-2">Name: {name}</p>
             <p className="mt-2">
               Genre: {genres?.toString()} | Language: {language} | Score:{" "}
