@@ -1,22 +1,26 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Show = ({ showList }) => {
-  const { name, image } = showList?.show;
+  const { name, image, id, rating } = showList?.show;
   const { medium } = image;
+  const navigate = useNavigate();
 
-  console.log(showList.show);
   return (
-    <div class="card max-w-md bg-base-100 shadow-xl">
+    <div className="card max-w-md bg-base-100 shadow-xl">
       <figure>
         <img src={medium} alt={name} />
       </figure>
-      <div class="card-body mx-auto">
-        <h2 class="text-center text-xl font-semibold">{name}</h2>
+      <div className="card-body mx-auto">
+        <h2 className="text-center text-xl font-semibold">{name}</h2>
         <p className="text-center mb-1 text-lg">
-          Score: {Math.round(showList.score * 10)}
+          Score: {(showList.score * 10).toFixed(1)}
         </p>
-        <div class="card-actions">
-          <button class="btn btn-sm btn-primary text-white">
+        <div className="card-actions">
+          <button
+            onClick={() => navigate(`/showdetails/${id}`)}
+            className="btn btn-sm btn-primary text-white"
+          >
             Show Details
           </button>
         </div>

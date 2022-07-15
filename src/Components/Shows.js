@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import useFetch from "../Hooks/useFetch";
 import Show from "./Show";
 
 const Shows = () => {
-  const [shows, setShows] = useState([]);
-  useEffect(() => {
-    fetch(`https://api.tvmaze.com/search/shows?q=all`)
-      .then((res) => res.json())
-      .then((data) => setShows(data));
-  }, []);
+  const { shows } = useFetch();
 
-  console.log(shows);
   return (
-    <div className="lg:grid grid-cols-4 lg:gap-10 p-10">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10 lg:p-10 py-10 lg:px-10 px-8">
       {shows?.map((showList) => {
         return (
           <Show
