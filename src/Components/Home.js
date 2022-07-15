@@ -1,5 +1,5 @@
 import React from "react";
-import Shows from "./Shows/Shows";
+import Shows from "./Shows";
 
 const Home = () => {
   return (
